@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>MetalBull</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+ <nav class="PitBull">
+		<ul>
+			<li><span style="color: #ce1507">MetalBull</span></li>
+			<li><img src="img/Dog.jpg" height="60px" width="80"></li>
+			<li><a href="cadastrarProduto.jsp" style="color: white;">Cadastrar Produto</a></li>
+			<li><a href="consultarProduto.jsp"style="color: white;">Consultar Produto</a></li>
+		</ul>
+	</nav>
+	<main class="PitMain">
+		<form action="" method="post" class="PitForm">
+			<div>
+				<label><strong>Busca pela Descrição:</strong></label><input type="text"
+					name="descricao">
+			</div>
+			<br>
+			<div>
+				<input id="PitButton" type="submit" name="salvar"
+					value="Consultar Produto">
+			</div>
+		</form>
+	</main>
+	<footer>
+		<h3>Todos os Direitos Reservados</h3>
+	</footer>
+</body>
+</html>
