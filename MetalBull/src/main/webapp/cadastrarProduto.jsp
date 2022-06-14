@@ -39,11 +39,11 @@
 				<input id="PitButton" type="submit" name="salvar"
 					value="Cadastrar Produto">
 			</div>
-			<br>
 			<div>			
 			<%
 			String mensagem = (String) request.getAttribute("mensagem");
 			if(mensagem!=null)
+				out.print(mensagem);
 			%>
 			
 			</div>

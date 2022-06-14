@@ -18,7 +18,7 @@
 		</ul>
 	</nav>
 	<main class="PitMain">
-		<form action="" method="post" class="PitForm">
+		<form action="buscarProdutosControle" method="post" class="PitForm">
 			<div>
 				<label><strong>Busca pela Descrição:</strong></label><input type="text"
 					name="descricao">
@@ -28,6 +28,43 @@
 				<input id="PitButton" type="submit" name="salvar"
 					value="Consultar Produto">
 			</div>
+		
+		<div class="PitDivMother">
+		<div class="PitDivItem">
+		 <div class="PitColum div">
+		 
+		   <span style="font-weight: bold">Id</span>
+		   <span>Conteudo</span>
+		   
+		 </div>
+		 
+		 <div class="PitColum div">
+		   <span style="font-weight: bold">Descrição</span>
+		   <span>Conteudo</span>
+		 </div>
+		 
+		 <div class="PitColum div">
+		   <span style="font-weight: bold">Quantidade</span>
+		   <span>Conteudo</span>
+		 </div>
+		 
+		 <div class="PitColum div">
+		   <span style="font-weight: bold">preco</span>
+		   <span>Conteudo</span>
+		 </div>
+		 
+		 <div class="PitColum div">
+		 
+		   <span style="font-weight: bold">On-Line</span>
+		   <span>Conteudo</span>
+		   
+		 </div>
+		 <div class="PitColum div ">
+		  <input id="PitButton" type="submit" name="alterar" value="Alterar">
+		   <input id="PitButton" type="submit" name="apagar" value="Apagar">
+		 </div>
+		</div>
+		</div>
 		</form>
 	</main>
 	<footer>

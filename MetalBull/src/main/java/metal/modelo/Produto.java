@@ -1,5 +1,9 @@
 package metal.modelo;
 
+import java.util.ArrayList;
+
+import metal.dao.ProdutoDao;
+
 public class Produto {
 	
   private  int idProduto;
@@ -64,5 +68,10 @@ public boolean isOnLine() {
 public void setOnLine(boolean onLine) {
 	this.onLine = onLine;
 }
-  
+  public void salvar() {
+	  new ProdutoDao().cadastrarProduto(this);
+  }
+  public ArrayList<Produto> BuscarProdutoPorDescricao(String descricao){
+	  return new ProdutoDao().BuscarProdutosPorDescricao(descricao);
+  }
 }

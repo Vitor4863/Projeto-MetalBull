@@ -1,11 +1,17 @@
 package metal.controle;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import metal.modelo.Produto;
+
+
 
 /**
  * Servlet implementation class cadastrarProdutoControle
@@ -26,9 +32,9 @@ public class cadastrarProdutoControle extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 this.doPost(request, response);
+		 
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		 System.out.println("Recebi A Requisição get !");
 	}
 
 	/**
@@ -39,15 +45,30 @@ public class cadastrarProdutoControle extends HttpServlet {
 		response.setContentType("text/html;chaset-UTF-8");
 		
 		String descricao = request.getParameter("descricao");
-		int quantidade= Integer.parseInt(request.getParameter("quantidade")) ;
-		double  preco = Double.parseDouble(request.getParameter("preco"));
-		boolean online = false;
-		if(request.getParameter("online")!=null && request.getParameter("online").equals("on"))
-		online = true;
-		System.out.println("[MetalBull]:" + descricao);
-		System.out.println("[MetalBull]:" + quantidade);
-		System.out.println("[MetalBull]:" + preco);
-		System.out.println("[MetalBull :" + online);
+		String mensagem;
+		
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("cadastrarProduto.jsp");
+		if(descricao!=null && !descricao.isEmpty()	&& request.getParameter("quantidade")!=null && !request.getParameter("quantidade").isEmpty()
+				&& request.getParameter("preco")!=null && !request.getParameter("preco").isEmpty()) {
+			int quantidade;
+			double preco;
+			 quantidade = Integer.parseInt(request.getParameter("quantidade")) ;
+			preco = Double.parseDouble(request.getParameter("preco"));		
+			boolean online = false;
+			if(request.getParameter("online")!=null && request.getParameter("online").equals("on"))
+			online = true;
+			 Produto produto = new Produto(descricao,quantidade,preco,online);
+			produto.salvar();
+		    mensagem = "Produto Cadastrado com sucesso! ";
+		}else 
+			mensagem = "Os campos precisam ser prenchidos!";
+				request.setAttribute("mensagem", mensagem);
+			    dispatcher.forward(request, response);
+		}
+		
+			
+		
 	}
 
-}
+

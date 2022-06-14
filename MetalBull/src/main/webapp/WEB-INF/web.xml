@@ -6,8 +6,19 @@
   <servlet-class>metal.controle.cadastrarProdutoControle</servlet-class>
   </servlet>
   
+  <servlet>
+  <servlet-name>buscar
+  </servlet-name>
+  <servlet-class>metal.controle.buscarProdutosControle</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
   <servlet-name>Cadastrar</servlet-name>
   <url-pattern>/cadastrarProduto</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  <servlet-name>buscar</servlet-name>
+  <url-pattern>/buscarProdutos</url-pattern>
   </servlet-mapping>
 </web-app>

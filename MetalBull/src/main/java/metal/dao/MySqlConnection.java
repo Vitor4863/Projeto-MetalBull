@@ -15,7 +15,7 @@ public class MySqlConnection {
 		}
 
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/banana", "root", "cefet123");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/MetalBull", "root", "");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
