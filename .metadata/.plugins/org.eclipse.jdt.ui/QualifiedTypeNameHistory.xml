@@ -4,9 +4,10 @@
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
-    <fullyQualifiedTypeName name="metal.dao.ProdutoDao"/>
     <fullyQualifiedTypeName name="metal.controle.buscarProdutosControle"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+    <fullyQualifiedTypeName name="metal.dao.ProdutoDao"/>
     <fullyQualifiedTypeName name="metal.modelo.Produto"/>
+    <fullyQualifiedTypeName name="servico.ProdutoServico"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,80 @@
+ <%@page import="metal.modelo.Produto"%>
+<%@page import="java.util.List" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>MetalBull</title>
+<link rel="stylesheet" href="estilo.css">
+<link rel="shortcut icon" href="img/Dog.jpg" type="image/x-icon">
+</head>
+<body>
+
+	<nav class="PitBull">
+		<ul>
+			<li><span style="color: #ce1507">MetalBull</span></li>
+			<li><img src="img/Dog.jpg" height="60px" width="80"></li>
+			<li><a href="cadastrarProduto.jsp" style="color: white;">Cadastrar
+					Produto</a></li>
+			<li><a href="consultarProduto.jsp" style="color: white;">Consultar
+					Produto</a></li>
+		</ul>
+	</nav>
+	<main class="PitMain">
+		<form action="buscarProdutosControle" method="post" class="PitForm">
+			<div>
+				<label><strong>Busca pela Descrição:</strong></label><input
+					type="text" name="descricao">
+			</div>
+			<br>
+			<div>
+				<input id="PitButton" type="submit" name="salvar"
+					value="Consultar Produto">
+			</div>
+			
+			<%
+			if(request.getAttribute("produtos") != null){
+				
+			List<?> produtos = (List<?>) request.getAttribute("produtos");
+			for (int contador = 0; contador<=(produtos.size()-1);contador++){
+				Produto produto = (Produto) produtos.get(contador);
+			
+			%>
+			<table  >
+				<tr>
+					<th colspan="2">ID</th>
+					<th colspan="2">Descrição</th>
+					<th colspan="2">Quantidade</th>
+					<th colspan="2">Preço</th>
+					<th colspan="2">OnLine</th>
+					<th colspan=4></th>
+				</tr>
+
+
+				<tr>
+					<td colspan="2"><%out.print(produto.getIdProduto()); %></td>
+					<td colspan="2"><%out.print(produto.getDescricao()); %></td>
+					<td colspan="2"><%out.print(produto.getQuantidade()); %></td>
+					<td colspan="2"><%out.print(produto.getPreco()); %></td>
+					<td colspan="2"><%out.print(produto.isOnLine()); %></td>
+					<td colspan="3"><input id="Button" type="submit"
+						name="alterar" value="Alterar"></td>
+					<td colspan="3"><input id="Button" type="submit" name="apagar"
+						value="Apagar"></td>
+				</tr>
+
+			</table>
+          <%
+          }}
+			%>
+		</form>
+	</main>
+	<footer>
+		<h3>Todos os Direitos Reservados</h3>
+	</footer>
+	
+	
+</body>
+</html>
