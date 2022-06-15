@@ -6,8 +6,8 @@
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="metal.controle.buscarProdutosControle"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="metal.dao.ProdutoDao"/>
-    <fullyQualifiedTypeName name="metal.modelo.Produto"/>
     <fullyQualifiedTypeName name="servico.ProdutoServico"/>
+    <fullyQualifiedTypeName name="metal.modelo.Produto"/>
+    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 </qualifiedTypeNameHistroy>

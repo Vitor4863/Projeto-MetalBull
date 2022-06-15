@@ -1,0 +1,70 @@
+package controle;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ProjetoTabuada
+ */
+@WebServlet("/ProjetoTabuada")
+public class ProjetoTabuada extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    /**
+     * Default constructor. 
+     */
+    public ProjetoTabuada() {
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+		
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 int numeroReferencia = 0;
+	        java.io.PrintWriter out = response.getWriter();
+	        try {
+	            numeroReferencia = Integer.parseInt(request.getParameter("numero"));
+	        } catch (Exception e) {
+
+	            out.print("<div style='color:#ff0000'>" + e.toString() + "</div>");
+
+	        }
+	        out.print("<html><body>");
+	        if (numeroReferencia > 0) {
+
+	            for (int i = 0; i <= 10; i++) {
+
+	                out.print(numeroReferencia + " X " + i + " = " + (numeroReferencia * i) + "<br/>");
+
+	            }
+
+	        } else {
+
+	            out.print("Numero informado inválido");
+	            
+	            
+			
+	        }
+	        out.print("</body></html>");
+
+	    	RequestDispatcher dispatcher = request.getRequestDispatcher("Resultado.jsp");
+			dispatcher.forward(request, response);
+		}
+	     
+	}
+  
+	
+

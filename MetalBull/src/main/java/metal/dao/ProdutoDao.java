@@ -84,7 +84,7 @@ public class ProdutoDao {
 		return produtos;
 	}
 
-	public void ExcluirProduto(int idProduto) {
+	public boolean ExcluirProduto(int idProduto) {
 		String sql = "DELETE FROM PRODUTO WHERE idProduto = ?";
 		PreparedStatement pStatement = null;
 		Connection conn = null;
@@ -110,6 +110,7 @@ public class ProdutoDao {
 				e2.printStackTrace();
 			}
 		}
+		return false;
 	}
 
 	public void AlterarProduto(Produto produto) {
@@ -142,6 +143,11 @@ public class ProdutoDao {
 				e2.printStackTrace();
 			}
 		}
+	}
+
+	public Produto BuscarProdutosPorDescricao(int idProduto) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

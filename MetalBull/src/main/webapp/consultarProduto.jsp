@@ -42,7 +42,7 @@
 				Produto produto = (Produto) produtos.get(contador);
 			
 			%>
-			<form action="modificarProdutoControle  method="post" class="PitForm">
+			
 			<table>
 				<tr>
 				  <th>ID</th>
@@ -58,10 +58,8 @@
 				  <td><%out.print(produto.getQuantidade()); %></td>
 				  <td><%out.print(produto.getPreco()); %></td>
 				  <td><%out.print(produto.isOnLine()); %></td>
-				  <td><input id="Button" type="submit"
-					name="alterar" value="Alterar"></td>
-					<td><input id="Button" type="submit" name="apagar"
-						value="Apagar"></td>
+				  <td><a href="Alterar.jsp?id=<%=produto.getIdProduto()%>"><img src="img/lixo.jpg" width="30px"/></a></td>
+					<td><a href="excluirProduto?id=<%=produto.getIdProduto()%>"><img src="img/lixo.jpg" width="30px"/></a></td>
 				</tr>
 				
 			  </table>
@@ -71,7 +69,7 @@
           }}
 		   %>
 		</form>
-		 </form>
+		 
 	</main>
 	<footer>
 		<h3>Todos os Direitos Reservados</h3>

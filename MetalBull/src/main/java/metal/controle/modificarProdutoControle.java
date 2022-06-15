@@ -1,20 +1,22 @@
 package metal.controle;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class modificarProdutoControle
- */
+import metal.modelo.Produto;
+
+
 @WebServlet("/modificarProdutoControle")
 public class modificarProdutoControle extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    
+   
     public modificarProdutoControle() {
         super();
         
@@ -22,16 +24,24 @@ public class modificarProdutoControle extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		doGet(request, response);
+		
 	}
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;chaset-UTF-8");
 		
-		String apagar = request.getParameter("apagar");
+		String alterar= request.getParameter("Alterar");
+		String id = request.getParameter("id");
 		
-		System.out.println(apagar);
+		if(alterar !=null && id != null) {
+			Produto produto = new Produto().BuscarProdutoPorDescricao(Integer.valueOf(id));
+			System.out.println(produto.getDescricao());
+			RequestDispatcher dispatcher = request.getRequestDispatcher("Alterar.jsp");
+			request.setAttribute("produto", produto);
+			dispatcher.forward(request, response);
+		}
+		
 	}
 
 }

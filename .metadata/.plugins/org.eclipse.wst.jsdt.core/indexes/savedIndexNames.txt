@@ -1,8 +1,3 @@
-INDEX VERSION 1.4+C:\Users\T-GAMER\Documents\Projeto-workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3898708815.index
+INDEX VERSION 1.4+C:\Users\T-GAMER\Desktop\Metal\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
 2312142362.index
-175402243.index
-358070407.index
-3134163284.index
 2656224609.index
-1050023624.index

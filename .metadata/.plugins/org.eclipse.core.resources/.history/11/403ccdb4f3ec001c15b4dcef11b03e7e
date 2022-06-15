@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <h1>Calculadora </h1>
+ 
+ <form method="post">
+  <label>Primeiro Numero : <label/>
+  <input type "number" required name ="valor A"/>
+  <label>Segundo Numero: <label/>
+  <input type="number" requerid
+ 
+ </form>
+</body>
+</html>

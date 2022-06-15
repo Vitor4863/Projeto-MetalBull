@@ -41,7 +41,7 @@ public class buscarProdutosControle extends HttpServlet {
 		
 		String descricao= request.getParameter("descricao");
 		
-		ArrayList<Produto> produtos = new Produto().BuscarProdutoPorDescricao(descricao);
+		ArrayList<Produto> produtos = new Produto().BuscarProdutosPorDescricao(descricao);
 		
 		request.setAttribute("produtos", produtos);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("consultarProduto.jsp");

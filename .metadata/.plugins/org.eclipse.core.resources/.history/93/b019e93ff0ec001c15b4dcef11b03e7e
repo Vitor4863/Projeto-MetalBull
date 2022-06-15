@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action "ProjetoTabuada" method="post">
+   <label for=""></label>
+ <input type="number" name="exp" id="exp">
+ 
+  <button><a href="resultado.jsp"></a></button>
+</form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<%@page import="metal.modelo.Produto"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Tela de inclusão</title>
+</head>
+<body>
+	<%
+		Produto produto = (Produto)session.getAttribute("ProdutoSelecionado");
+	
+	%>
+	<nav class="PitBull">
+		<ul>
+			<li><span style="color: #ce1507">MetalBull</span></li>
+			<li><img src="img/Dog.jpg" height="60px" width="80"></li>
+			
+		</ul>
+	</nav>
+	<main class="PitMain">
+		<form action="cadastrarProduto" method="post" class="PitForm">
+			<div>
+				<label><strong>Descrição:</strong></label><input type="text"
+					name="descricao" value="<%=produto.getDescricao()%>">
+			</div>
+			<div>
+				<label><strong>Quantidade:</strong></label><input type="text"
+					name="quantidade" value="<%=produto.getQuantidade()%>">
+			</div>
+			<div>
+				<label><strong>Preço:</strong></label><input type="text"
+					name="preco" value="<%=produto.getPreco()%>">
+			</div>
+
+			<label><strong>Disponível On-Line:</strong></label><input
+				type="checkbox" name="online" value="<%=produto.isOnLine()%>">
+			<br>
+			<div>
+				<input id="PitButton" type="submit" name="salvar"
+					value="Cadastrar Produto">
+			</div>
+			</form>
+			</main>
+	<div>
+		<nav>
+			<ul>
+				<li><a href="consultarProduto.jsp">Home</a></li>
+			</ul>
+		</nav>
+	</div>	
+</body>
+</html>
