@@ -28,11 +28,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/main/webapp/img</name>
-			<type>2</type>
-			<location>C:/Users/T-GAMER/Desktop/Projeto/img</location>
-		</link>
-	</linkedResources>
 </projectDescription>

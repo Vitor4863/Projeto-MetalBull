@@ -73,18 +73,13 @@ public void setOnLine(boolean onLine) {
   }
   
   
-  
-  public Produto BuscarProdutoPorDescricao(int IdProduto){
-	  return new ProdutoDao().BuscarProdutosPorDescricao(idProduto);
+  public Produto buscarProdutoPorId(int idProduto) {
+	  return  new Produto().buscarProdutoPorId(idProduto);
   }
+ 
   public ArrayList <Produto>BuscarProdutosPorDescricao(String descricao){
 	  return new ProdutoDao().BuscarProdutosPorDescricao(descricao);
   }
 	  
-public boolean AlterarProduto(Produto produto) {
-	
-	return false;
-}
-
-
+  
 }

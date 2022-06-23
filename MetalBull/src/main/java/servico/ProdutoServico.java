@@ -7,11 +7,16 @@ public class ProdutoServico {
 
 	ProdutoDao produto = new ProdutoDao();
 	
-	public boolean alterar(Produto produto) {
-		return false;
-		
-		
+	public Produto BuscarProdutoPorId(int id) {
+		return produto.BuscarProdutoPorId(id);
 	}
+	
+	public boolean alterar(Produto id) {
+		return produto.AlterarProduto(id);
+	}
+		
+		
+	
 	public boolean excluir(String id ) {
 		int idproduto;
 		

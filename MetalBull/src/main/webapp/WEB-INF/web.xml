@@ -17,6 +17,7 @@
   <servlet-class>metal.controle.modificarProdutoControle</servlet-class>
   </servlet>
   
+  
   <servlet-mapping>
   <servlet-name>Cadastrar</servlet-name>
   <url-pattern>/cadastrarProduto</url-pattern>

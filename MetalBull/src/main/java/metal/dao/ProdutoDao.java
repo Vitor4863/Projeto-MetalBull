@@ -39,6 +39,44 @@ public class ProdutoDao {
 			}
 		}
 	}
+	public Produto BuscarProdutoPorId(int id) {
+		String sql = "SELECT * From PRODUTO WHERE idProduto = ?";
+		ResultSet rs = null ;
+		Connection conn = null;
+		PreparedStatement pStatement = null;
+		Produto produto = null;
+		try {
+			conn = new MySqlConnection().getConnection();
+			pStatement = conn.prepareStatement(sql);
+			pStatement.setInt(1, id);
+			rs = pStatement.executeQuery();
+			if(rs!=null && rs.next()) {
+				produto = new Produto();
+				produto.setIdProduto(rs.getInt("idProduto"));
+				produto.setDescricao(rs.getString("descricao"));
+				produto.setQuantidade(rs.getInt("quantidade"));
+				produto.setPreco(rs.getDouble("preco"));
+				produto.setOnLine(rs.getBoolean("onLine"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			
+			try {
+				if(pStatement != null) {pStatement.close();}
+			}catch(Exception e2) {
+				e2.printStackTrace();
+			}
+			try {
+				if(conn != null) {conn.close();}
+			}catch(Exception e2) {
+				e2.printStackTrace();
+			}
+				
+			}
+		return produto;
+		
+	}
 
 	public ArrayList<Produto> BuscarProdutosPorDescricao(String descricao) {
 		String sql = "SELECT * FROM PRODUTO WHERE descricao LIKE '%" + descricao + "%'";
@@ -113,7 +151,8 @@ public class ProdutoDao {
 		return false;
 	}
 
-	public void AlterarProduto(Produto produto) {
+	public boolean AlterarProduto(Produto produto) {
+		
 		String sql = "UPDATE PRODUTO SET descricao = ?, quantidade = ?, preco = ?, onLine = ? WHERE idProduto = ?";
 		PreparedStatement pStatement = null;
 		Connection conn = null;
@@ -143,12 +182,9 @@ public class ProdutoDao {
 				e2.printStackTrace();
 			}
 		}
+		return false;
 	}
 
-	public Produto BuscarProdutosPorDescricao(int idProduto) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }
-

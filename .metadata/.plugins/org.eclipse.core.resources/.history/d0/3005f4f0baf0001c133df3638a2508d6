@@ -1,0 +1,48 @@
+package metal.controle;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import metal.modelo.Produto;
+import servico.ProdutoServico;
+
+
+@WebServlet("/modificarProdutoControle")
+public class modificarProdutoControle extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+   
+    public modificarProdutoControle() {
+        super();
+        
+    }
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+		
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Produto produto = new Produto();
+		ProdutoServico servico = new ProdutoServico();
+		
+		produto.setIdProduto(Integer.parseInt(request.getParameter("id")));
+		produto.setDescricao(request.getParameter("descricao"));
+		produto.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
+		produto.setPreco(Integer.parseInt(request.getParameter("preco")));
+		produto.isOnLine();
+		if(servico.alterar(produto)) {
+			response.sendRedirect("Alterar.jsp");
+		}	
+		
+	}
+
+}

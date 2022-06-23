@@ -1,0 +1,81 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<link rel="stylesheet" href="estilo.css">
+<body>
+	<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-image: url("Image/pit2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+}
+
+form {
+	background-color: rgba(0, 0, 0, 0.9);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 80px;
+	border-radius: 15px;
+	color: #fff;
+}
+
+input {
+	padding: 15px;
+	border: none;
+	outline: none;
+	font-size: 15px;
+}
+
+button {
+	background-color: dodgerblue;
+	border: none;
+	padding: 15px;
+	width: 100%;
+	border-radius: 10px;
+	color: white;
+	font-size: 15px;
+}
+
+button:hover {
+	background-color: deepskyblue;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+	
+	<form id="entrada" method="post" name="entrada" action="confirma.html" onsubmit="return validar();"autocomplete="off"><!--form-->
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" name="usuario" class="form-control" placeholder="Usuario" id="usuario"><!--usuario-->
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" name="senha" class="form-control" placeholder="Senha" id="senha"><!--senha-->
+					</div>
+					<div class="row align-items-center remember">
+						<input type="checkbox">Lembrar
+					</div>
+					<div class="form-group">
+						<input type="submit" name="enviar" id="enviar" value="Entrar" class="btn float-right login_btn"><!--botão-->
+					</div>
+				</form>
+</body>
+
+
+</html>

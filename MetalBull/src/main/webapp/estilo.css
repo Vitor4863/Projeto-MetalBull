@@ -14,7 +14,7 @@
 }
 
 .PitMain {
-	background-image: url("img/R.jpg");
+	background-image: url("Image/R.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100vw;
@@ -132,5 +132,5 @@ footer {
     height: 100px;    
     text-align: center;
     line-height: 100px;
-	
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }

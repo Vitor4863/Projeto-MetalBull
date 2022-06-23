@@ -1,0 +1,5 @@
+package metal.dao;
+
+public class UsuarioDao {
+
+}

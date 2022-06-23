@@ -15,7 +15,7 @@
 	<nav class="PitBull">
 		<ul>
 			<li><span style="color: #ce1507">MetalBull</span></li>
-			<li><img src="img/Dog.jpg" height="60px" width="80"></li>
+			<li><img src="Image/Dog.jpg" height="60px" width="80"></li>
 			<li><a href="cadastrarProduto.jsp" style="color: white;">Cadastrar
 					Produto</a></li>
 			<li><a href="consultarProduto.jsp" style="color: white;">Consultar
@@ -23,6 +23,7 @@
 		</ul>
 	</nav>
 	<main class="PitMain">
+	
 		<form action="buscarProdutosControle" method="post" class="PitForm">
 			<div>
 				<label><strong>Busca pela Descrição:</strong></label>
@@ -58,8 +59,8 @@
 				  <td><%out.print(produto.getQuantidade()); %></td>
 				  <td><%out.print(produto.getPreco()); %></td>
 				  <td><%out.print(produto.isOnLine()); %></td>
-				  <td><a href="Alterar.jsp?id=<%=produto.getIdProduto()%>"><img src="img/lixo.jpg" width="30px"/></a></td>
-					<td><a href="excluirProduto?id=<%=produto.getIdProduto()%>"><img src="img/lixo.jpg" width="30px"/></a></td>
+				  <td><a href="modificarProdutoControle?id=<%=produto.getIdProduto()%>"><img src="Image/lixo.jpg" width="30px"/></a></td>
+					<td><a href="excluirProduto?id=<%=produto.getIdProduto()%>"><img src="Image/lixo.jpg" width="30px"/></a></td>
 				</tr>
 				
 			  </table>
@@ -69,7 +70,8 @@
           }}
 		   %>
 		</form>
-		 
+		
+		
 	</main>
 	<footer>
 		<h3>Todos os Direitos Reservados</h3>
