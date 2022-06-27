@@ -148,9 +148,7 @@ footer {
 @media only screen and (max-device-width: 500px) {
 /* .menu { width:400px; } */
 }
-@media only screen and (max-device-width: 400px) {
-/* .menu { width:400px; } */
-}
+
 @media only screen and (max-device-width: 300px) {
 /* .menu { width:400px; } */
 }

@@ -68,9 +68,6 @@ button:hover {
 @media only screen and (max-device-width: 400px) {
 /* .menu { width:400px; } */
 }
-@media only screen and (max-device-width: 390px) {
-/* .menu { width:300px; } */
- }
 @media only screen and (max-device-width: 300px) {
 /* .menu { width:400px; } */
  }
@@ -81,10 +78,6 @@ button:hover {
   .left, .main, .right {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
-  window.devicePixelRatio
-// Which will return the figure 2.6
-
-
 </style>
 </head>
 <body>

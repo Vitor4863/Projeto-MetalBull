@@ -134,23 +134,3 @@ footer {
     line-height: 100px;
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
-@media screen and (max-width: 800px) {
-  .left, .main, .right {
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-  }
-}
-@media only screen and (max-device-width: 900px) {
-/* .menu { width:100%; } */
-}
-@media only screen and (max-device-width: 700px) {
-/* .menu { width:400px; } */
-}
-@media only screen and (max-device-width: 500px) {
-/* .menu { width:400px; } */
-}
-@media only screen and (max-device-width: 400px) {
-/* .menu { width:400px; } */
-}
-@media only screen and (max-device-width: 300px) {
-/* .menu { width:400px; } */
-}

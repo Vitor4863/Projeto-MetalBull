@@ -139,18 +139,3 @@ footer {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
 }
-@media only screen and (max-device-width: 900px) {
-/* .menu { width:100%; } */
-}
-@media only screen and (max-device-width: 700px) {
-/* .menu { width:400px; } */
-}
-@media only screen and (max-device-width: 500px) {
-/* .menu { width:400px; } */
-}
-@media only screen and (max-device-width: 400px) {
-/* .menu { width:400px; } */
-}
-@media only screen and (max-device-width: 300px) {
-/* .menu { width:400px; } */
-}

@@ -68,9 +68,6 @@ button:hover {
 @media only screen and (max-device-width: 400px) {
 /* .menu { width:400px; } */
 }
-@media only screen and (max-device-width: 390px) {
-/* .menu { width:300px; } */
- }
 @media only screen and (max-device-width: 300px) {
 /* .menu { width:400px; } */
  }
@@ -84,7 +81,15 @@ button:hover {
   window.devicePixelRatio
 // Which will return the figure 2.6
 
-
+<picture>
+  <source media="print" scrset="images/oxford-g.jpg">
+  <source media="(max-width: 400px)"scrsert="images/oxford-p.jpg">
+  <source media="(max-width: 800px)"scrset="images/oxford-m.jpg>
+  <img src="images/oxford-hd.jpg" alt="Imagem OXFORD">
+</picture>
+img {
+max-width:100%;
+}
 </style>
 </head>
 <body>
