@@ -35,6 +35,7 @@
 					value="Consultar Produto">
 			</div>
 			
+			
 			<%
 			if(request.getAttribute("produtos") != null){
 				
@@ -59,7 +60,7 @@
 				  <td><%out.print(produto.getQuantidade()); %></td>
 				  <td><%out.print(produto.getPreco()); %></td>
 				  <td><%out.print(produto.isOnLine()); %></td>
-				  <td><a href="modificarProdutoControle?id=<%=produto.getIdProduto()%>"><img src="Image/lixo.jpg" width="30px"/></a></td>
+				  
 					<td><a href="excluirProduto?id=<%=produto.getIdProduto()%>"><img src="Image/lixo.jpg" width="30px"/></a></td>
 				</tr>
 				

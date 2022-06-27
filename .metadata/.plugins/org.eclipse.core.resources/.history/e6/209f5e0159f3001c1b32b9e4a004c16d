@@ -1,0 +1,42 @@
+<%@page import="metal.modelo.Produto"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>MetalBull</title>
+<link rel="stylesheet" href="estilo.css">
+<link rel="shortcut icon" href="img/Dog.jpg" type="image/x-icon">
+</head>
+<body>
+<%
+		Produto produto = (Produto)session.getAttribute("produtoSelecionado");
+	
+	%>
+ <div id="btn-dark">
+        <input type="checkbox" class="checkbox" id="chk"/>
+        <label class="label" for="chk">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+        </label>
+    </div>
+	<div id="tudo">
+	<div id="titulo">
+			<h2>Lista de compras</h2>
+		</div>
+	<div id="formulario">
+	<form action="AlterarProdutoServlet" method="post">
+		<input type="hidden" name="id" id="id" value="<%=produto.getIdProduto() %>"/>
+		<input type="text" name="descricao" id="descricao" placeholder="<%=produto.getDescricao() %>" maxlength="25" class="preencher" required /><br>
+		<input type="number" name="quantidade" id="quantidade" placeholder="<%=produto.getQuantidade()%>" class="preencher" required/><br>
+		<input type="number" name="preco" id="preco" placeholder="<%=produto.getPreco()%>" class="preencher" required/><br>
+		<input type="submit" value="alterar item" class="botao"><br>
+		<a href="consultar.jsp"><input type="button" value="voltar" class="botao"><br></a>
+	</form><br>
+	</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>

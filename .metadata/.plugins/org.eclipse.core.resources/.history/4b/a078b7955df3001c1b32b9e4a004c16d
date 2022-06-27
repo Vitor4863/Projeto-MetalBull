@@ -1,0 +1,169 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<link rel="shortcut icon" href="img/Dog.jpg" type="image/x-icon">
+<link rel="stylesheet" href="estilo.css">
+<body>
+	<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-image: url("Image/pit2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+}
+
+form {
+	background-color: rgba(0, 0, 0, 0.9);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 80px;
+	border-radius: 15px;
+	color: #fff;
+}
+
+input {
+	padding: 15px;
+	border: none;
+	outline: none;
+	font-size: 15px;
+}
+
+button {
+	background-color: #a51b0b;
+	border: none;
+	padding: 15px;
+	width: 100%;
+	border-radius: 10px;
+	color: white;
+	font-size: 15px;
+}
+
+button:hover {
+	background-color: deepskyblue;
+	cursor: pointer;
+}
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  margin: 0;
+  transition: background 0.2s linear;
+}
+
+body.dark {
+  background: #292c35;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  background-color: #111;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 5px;
+  position: relative;
+  height: 26px;
+  width: 50px;
+  transform: scale(1.5);
+
+}
+
+
+.label .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 22px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+</style>
+</head>
+<body>
+
+<div>
+      <input type="checkbox" class="checkbox" id="chk" />
+      <label class="label" for="chk">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+      </label>
+    </div>
+    <script>
+    const chk = document.getElementById('chk')
+
+chk.addEventListener('change', () => {
+  document.body.classList.toggle('dark')
+})
+</script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
+ <script>
+        function validar(){
+            alert(document.entrada.usuario.value);
+
+            if((document.entrada.usuario.value == "admin") && (document.entrada.senha.value == "12345")){
+				sessionStorage.setItem('usuario') = "admin";
+                return true;
+            } else {
+                alert('usuario e/ou Senha incorretos');
+                return false;
+            }
+        }
+    </script><!-
+    -JAVA SCRIPT-->
+	
+	
+	<form action="cadastrarProduto.jsp">
+		<h1>Login</h1>
+		<input type="text" placeholder="Nome"> <br>
+		<br> <input type="password" placeholder="Senha"> <br>
+		<br>
+		<button>Enviar</button>
+	</form>
+</body>
+
+
+</html>

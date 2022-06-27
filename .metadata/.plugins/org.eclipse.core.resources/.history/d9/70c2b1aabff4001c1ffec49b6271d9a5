@@ -1,0 +1,23 @@
+package app;
+
+import java.util.ArrayList;
+
+import metal.dao.ProdutoDao;
+import metal.modelo.Produto;
+
+public class App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+ArrayList<Produto> produtos;
+		
+		ProdutoDao dao = new ProdutoDao();
+		
+		produtos = dao.BuscarProdutosPorDescricao(null);
+		
+		for(Produto u: produtos) {
+			System.out.println(u);
+		}
+	}
+
+}

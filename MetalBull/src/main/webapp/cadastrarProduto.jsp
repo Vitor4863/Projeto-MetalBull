@@ -12,7 +12,7 @@
  <nav class="PitBull">
 		<ul>
 			<li><span style="color: #ce1507">MetalBull</span></li>
-			<li><img src="img/Dog.jpg" height="60px" width="80"></li>
+			<li><img src="Image/Dog.jpg" height="60px" width="80"></li>
 			<li><a href="cadastrarProduto.jsp" style="color: white;">Cadastrar Produto</a></li>
 			<li><a href="consultarProduto.jsp" style="color: white;">Consultar Produto</a></li>
 		</ul>

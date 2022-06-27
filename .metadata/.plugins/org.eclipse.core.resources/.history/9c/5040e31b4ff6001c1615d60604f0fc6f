@@ -1,0 +1,36 @@
+<%@page import="metal.modelo.Produto"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Tela de inclusão</title>
+</head>
+<body>
+	<%
+		Produto produto = (Produto)session.getAttribute("usuarioSelecionado");
+	
+	%>
+	<div>
+		<form action="AlterarUsuarioServlet" method="post">
+			<input type="hidden" name="idProduto" id="idProduto" value="<%=produto.getIdProduto() %>"/>
+			<label>Descricao : </label>
+			<input type="text" name="descricao" id="descricao" placeholder="Nome do Usuário" size="40" value="<%=produto.getDescricao()%>"/><br>
+			<label>Quantidade:</label>
+			<input type="text" name="quantidade" id="quantidade" placeholder="Login para o usuário" size="20" value="<%=produto.getQuantidade()%>"/><br>
+			<label>preco:</label>
+			<input type="text" name="preco" id="preco" placeholder="Senha" size="20" value="<%=produto.getPreco()%>"/><br>	
+			<input type="submit" value="Gravar"/>
+		</form>
+	</div>
+	<div>
+		<nav>
+			<ul>
+				<li><a href="menu.jsp">Home</a></li>
+			</ul>
+		</nav>
+	</div>	
+</body>
+</html>

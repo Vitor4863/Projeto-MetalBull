@@ -72,14 +72,25 @@ public void setOnLine(boolean onLine) {
 	  new ProdutoDao().cadastrarProduto(this);
   }
   
-  
-  public Produto buscarProdutoPorId(int idProduto) {
-	  return  new Produto().buscarProdutoPorId(idProduto);
-  }
+
+
  
   public ArrayList <Produto>BuscarProdutosPorDescricao(String descricao){
 	  return new ProdutoDao().BuscarProdutosPorDescricao(descricao);
   }
+
+@Override
+public String toString() {
+	return "Produto [idProduto=" + idProduto + ", descricao=" + descricao + ", quantidade=" + quantidade + ", preco="
+			+ preco + ", onLine=" + onLine + "]";
+
+
+
+
+
+}
+}
+
 	  
   
-}
+

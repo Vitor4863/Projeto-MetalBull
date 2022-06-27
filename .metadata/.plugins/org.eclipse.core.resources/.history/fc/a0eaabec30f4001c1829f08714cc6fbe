@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>MetalBull</display-name>
+  <servlet>
+  <servlet-name>Cadastrar</servlet-name>
+  <servlet-class>metal.controle.cadastrarProdutoControle</servlet-class>
+  </servlet>
+  
+  <servlet>
+  <servlet-name>buscar
+  </servlet-name>
+  <servlet-class>metal.controle.buscarProdutosControle</servlet-class>
+  </servlet>
+  
+  <servlet>
+  <servlet-name>modificar</servlet-name>
+  <servlet-class>metal.controle.modificarProdutoControle</servlet-class>
+  </servlet>
+  
+  
+  <servlet-mapping>
+  <servlet-name>Cadastrar</servlet-name>
+  <url-pattern>/cadastrarProduto</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  <servlet-name>buscar</servlet-name>
+  <url-pattern>/buscarProdutos</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  <servlet-name>modificar</servlet-name>
+  <url-pattern>/modificarProduto</url-pattern>
+  </servlet-mapping>
+</web-app>

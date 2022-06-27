@@ -1,0 +1,77 @@
+package metal.dao;
+
+import java.lang.System.Logger.Level;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Logger;
+
+import org.apache.tomcat.dbcp.dbcp2.ConnectionFactory;
+
+public class MySqlConnection {
+	
+	public static Connection getConnection() {
+		Connection conn = null;
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/MetalBull", "root", "");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return conn;
+	}
+
+	public static void closeConnection1(Connection conn) {
+		 try {
+	            if (conn != null) {
+	                conn.close();
+	            }
+	        } catch (SQLException ex) {
+	            Logger.getLogger( MySqlConnection.class.getName()).log(null);
+	        }
+	    }
+
+	    public static void closeConnection(Connection con, PreparedStatement stmt) {
+
+	        Connection conn = null;
+			closeConnection1(conn);
+
+	        try {
+
+	            if (stmt != null) {
+	                stmt.close();
+	            }
+
+	        } catch (SQLException ex) {
+	            Logger.getLogger( MySqlConnection.class.getName()).log(null);
+	        }
+	    }
+
+	    public static void closeConnection(Connection con, PreparedStatement stmt, ResultSet rs) {
+
+	        closeConnection(con, stmt);
+
+	        try {
+
+	            if (rs != null) {
+	                rs.close();
+	            }
+
+	        } catch (SQLException ex) {
+	            Logger.getLogger(ConnectionFactory.class.getName()).log(null);
+	        }
+	    }
+		
+	}
+
+
+

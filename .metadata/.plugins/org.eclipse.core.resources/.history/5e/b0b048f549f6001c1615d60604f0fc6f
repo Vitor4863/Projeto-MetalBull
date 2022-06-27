@@ -1,0 +1,68 @@
+package metal.controle;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import metal.modelo.Produto;
+import servico.ProdutoServico;
+
+/**
+ * Servlet implementation class Alterar
+ */
+@WebServlet("/Alterar")
+public class Alterar extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Alterar() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		
+			
+			
+			
+			
+			Produto pdr = new Produto();
+			ProdutoServico servico = new ProdutoServico();
+			
+			pdr.setIdProduto(Integer.parseInt(request.getParameter("id")));
+			pdr.setDescricao(request.getParameter("nome"));
+			pdr.setQuantidade(Integer.parseInt(request.getParameter("usuario")));
+			pdr.setPreco(Double.parseDouble(request.getParameter("senha")));
+			pdr.setOnLine(Boolean.parseBoolean(request.getParameter("onlineP")));
+			if(servico.alterar(usr)) {
+				response.sendRedirect("menu.jsp");
+			}		
+			if(servico.alterar(pdr)) {
+			
+		  response.sendRedirect("consultarProduto.jsp");
+				
+	}
+			
+	}
+}
+

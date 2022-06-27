@@ -1,0 +1,28 @@
+package servico;
+
+
+
+import metal.dao.ProdutoDao;
+import metal.modelo.Produto;
+
+public class ProdutoServico {
+
+	ProdutoDao produto = new ProdutoDao();
+	
+	public boolean buscarPorId(int id) {
+		return produto.buscarPorId(id);
+	}
+	
+	
+	public boolean alterar(Produto pdr) {
+		return produto.alterarUsuario(pdr);
+	}
+		
+	public boolean excluir(String id ) {
+		int idproduto;
+		
+		idproduto = Integer.parseInt(id);
+		
+		return produto.ExcluirProduto(idproduto);
+	}
+}
